@@ -30,10 +30,10 @@ You can plan your deployment size using the [assessment tool](https://docs.micro
 
 #### Web App
 [Web app](https://docs.microsoft.com/en-us/azure/app-service/overview), common PaaS solution, allowing developers to host thier code in a quick manner, it let the developr focus on the application, rather than anything else.
-Web app can host application written in multiple languages. In this example we are using a Python based application. If this is your first time using one, We suggest you follow a [tutorial](https://docs.microsoft.com/en-us/azure/app-service/containers/quickstart-python?tabs=bash) to get familar with the concepts.
+Web app can host application written in multiple languages. In this example we are using a Node based application. If this is your first time using one, We suggest you follow a [tutorial](https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?pivots=platform-linux) to get familar with the concepts.
 
 ##### Securing Web App
 In most cases, you will need to use the user context to enable specific authorization access, either to areas in your app or to pass through the user context to the PowerBi report/dashboard. following are tow main repositories that showcase the abilities and capabilities of MSAL.
-[Main MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-js)
-[Stand Alon Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/b2c-auth-code)
+- [Main MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-js)
+- [Stand Alon Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/b2c-auth-code)
 
