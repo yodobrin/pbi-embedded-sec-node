@@ -3,12 +3,12 @@
 // Licensed under the MIT license.
 // ----------------------------------------------------------------------------
 
-// let config = require(__dirname + "/../config/config.json");
+
+
 require('dotenv').config();
 
 
 function getAuthHeader(accessToken) {
-
     // Function to append Bearer against the Access Token
     return "Bearer ".concat(accessToken);
 }
@@ -27,7 +27,7 @@ function validateConfig() {
         return "AuthenticationMode is wrong. Please choose MasterUser or ServicePrincipal in config.json";
     }
     
-    // config.clientId
+    
     if (!process.env.pbi_clientId) {
         return "ClientId is empty. Please register your application as Native app in https://dev.powerbi.com/apps and fill Client Id in config.json.";
     }

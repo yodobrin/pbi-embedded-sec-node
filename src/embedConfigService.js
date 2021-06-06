@@ -16,8 +16,7 @@ const fetch = require('node-fetch');
 async function getEmbedInfo() {
 
     // Get the Report Embed details
-    try {
-        // console.log("env" + process.env.workspaceId);
+    try {        
         // Get report details and embed token
         const embedParams = await getEmbedParamsForSingleReport(process.env.workspaceId, process.env.reportId);
 
@@ -30,7 +29,7 @@ async function getEmbedInfo() {
     } catch (err) {
         return {
             'status': err.status,
-            // 'error': `Error while retrieving report embed details\r\n${err.statusText}\r\nRequestId: \n`
+            
             'error': `Error while retrieving report embed details\r\n${err.statusText}\r\nRequestId: \n${err.headers.get('requestid')}`
         }
     }
@@ -44,8 +43,7 @@ async function getEmbedInfo() {
  * @return EmbedConfig object
  */
 async function getEmbedParamsForSingleReport(workspaceId, reportId, additionalDatasetId) {
-    //
-    // const reportInGroupApi = `https://msit.powerbi.com/groups/b71aa6ce-8c09-4542-ae29-b5203d9cca7a/reports/fd0aa61c-6512-4f28-8159-ed0ef7bc1a8e/ReportSection1`;
+    
     const reportInGroupApi = `https://api.powerbi.com/v1.0/myorg/groups/${workspaceId}/reports/${reportId}`;
     const headers = await getRequestHeader();
 

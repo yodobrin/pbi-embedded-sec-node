@@ -6,7 +6,6 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const msal = require("@azure/msal-node");
 
-// const api = require("./api");
 const policies = require("./policies");
 let path = require('path');
 require('dotenv').config();
@@ -23,7 +22,6 @@ const confidentialClientConfig = {
         clientId:  process.env.login_clientID,
         authority: process.env.authorityLogin, 
         clientSecret: process.env.login_clientSecret,
-        // knownAuthorities: [policies.authorityDomain], 
         redirectUri: process.env.redirectUrl,
     },
     system: {
@@ -37,16 +35,11 @@ const confidentialClientConfig = {
     }
 };
 
-// Current web API coordinates were pre-registered in a B2C tenant.
-// const apiConfig = {
-//     webApiScopes: ["https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read"],
-//     webApiUri: "https://fabrikamb2chello.azurewebsites.net/hello"
-// };
+
 
 const SCOPES = {
     pbi: ["user.read"],
     oidc: ["openid", "profile"],
-    // resource1: [...apiConfig.webApiScopes],
 }
 
 /**
@@ -58,8 +51,7 @@ const SCOPES = {
  */
 const APP_STATES = {
     login: "login",
-    // call_api: "call_api",
-    // password_reset: "password_reset",
+
 }
 
 /** 
@@ -81,7 +73,7 @@ const cca = new msal.ConfidentialClientApplication(confidentialClientConfig);
 
 // Create an express instance
 const app = express();
-
+// Required for pbi embedded
 app.use('/js', express.static('./node_modules/bootstrap/dist/js/')); // Redirect bootstrap JS
 app.use('/js', express.static('./node_modules/jquery/dist/')); // Redirect JS jQuery
 app.use('/js', express.static('./node_modules/powerbi-client/dist/')) // Redirect JS PowerBI
@@ -130,6 +122,7 @@ app.get("/", (req, res) => {
 
 // Initiates auth code grant for login
 app.get("/login", (req, res) => {
+    // future enabler
     if (authCodeRequest.state === APP_STATES.password_reset) {
         // if coming for password reset, set the authority to password reset
         getAuthCode(policies.authorities.resetPassword.authority, SCOPES.pbi, APP_STATES.password_reset, res);
@@ -139,10 +132,6 @@ app.get("/login", (req, res) => {
     }
 })
 
-// Initiates auth code grant for edit_profile user flow
-// app.get("/profile", (req, res) => {
-//     getAuthCode(policies.authorities.editProfile.authority, SCOPES.oidc, APP_STATES.login, res);
-// });
 
 // Initiates auth code grant for web API call
 app.get("/api", async (req, res) => {
@@ -151,8 +140,6 @@ app.get("/api", async (req, res) => {
         getAuthCode(policies.authorities.signUpSignIn.authority, SCOPES.resource1, APP_STATES.call_api, res);
     } else {
         // else, render the embedded page
-        // api.callWebApi(apiConfig.webApiUri, app.locals.accessToken, (response) => {
-        //     const templateParams = { showLoginButton: false, profile: JSON.stringify(response, null, 4) };
         res.render("pbi", templateParams);
         ;
     }
@@ -194,36 +181,7 @@ app.get("/redirect", (req, res) => {
             });
 
     } 
-    // else if (req.query.state === APP_STATES.call_api) {
 
-    //     // prepare the request for calling the web API
-    //     tokenRequest.authority = policies.authorities.signUpSignIn.authority;
-    //     tokenRequest.scopes = SCOPES.resource1;
-    //     tokenRequest.code = req.query.code;
-
-    //     cca.acquireTokenByCode(tokenRequest)
-    //         .then((response) => {
-
-    //             // store access token somewhere
-    //             app.locals.accessToken = response.accessToken;
-
-    //             // call the web API
-    //             api.callWebApi(apiConfig.webApiUri, response.accessToken, (response) => {
-    //                 const templateParams = { showLoginButton: false, profile: JSON.stringify(response, null, 4) };
-    //                 res.render("api", templateParams);
-    //             });
-                
-    //         }).catch((error) => {
-    //             console.log(error);
-    //             res.status(500).send(error);
-    //         });
-
-    // } else if (req.query.state === APP_STATES.password_reset) {
-
-    //     // once the password is reset, redirect the user to login again with the new password
-    //     authCodeRequest.state = APP_STATES.login;
-    //     res.redirect('/login');
-    // } 
     else {
         res.status(500).send("Unknown");
     }

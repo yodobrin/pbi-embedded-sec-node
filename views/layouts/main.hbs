@@ -1,3 +1,8 @@
+{{!-- ----------------------------------------------------------------------------
+ Copyright (c) Microsoft Corporation.
+ Licensed under the MIT license.
+---------------------------------------------------------------------------- --}}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,26 +19,15 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="/">IaI Landing</a>
-        {{!-- {{#if showSignInButton}} --}}
+
         <div class="ml-auto">
             <a type="button" id="SignIn" class="btn btn-secondary" href="/login" aria-haspopup="true" aria-expanded="false">
                 Sign-in
             </a>
             <a type="button" id="SignOut" class="btn btn-secondary" href="/logout" aria-haspopup="true" aria-expanded="false">
                 Logut
-            </a>
-       
-        {{!-- {{else}}
-        <div class="ml-auto">
-            <a type="button" id="EditProfile" class="btn btn-warning" href="/profile" aria-haspopup="true" aria-expanded="false">
-                Edit Profile
-            </a>
-        </div>
-        {{/if}} --}}
+            </a>       
     </nav>
-    {{!-- <br>
-    <h5 class="card-header text-center">MSAL Node Confidential Client application with Auth Code Flow</h5>
-    <br> --}}
     <div class="row" style="margin:auto" >
       {{{body}}}
     </div>
