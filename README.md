@@ -44,6 +44,8 @@ In most cases, you will need to use the user context to enable specific authoriz
 It is recoemnded to utilize Service Principal, as users might move from an organization, their authorization altered etc. In this repository, we cover the steps required to create and enable a service principal access to embedded capacity.
 The following [guide](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) contains step by step instructions on how to create a service principal.
 
+Another service principal is required to read user information from the ```graph api```. Please see this [guide](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) to create one.
+
 ### Power BI - One time setup
 There are two options to consume PBI embedded capacity, see [license types](https://docs.microsoft.com/en-us/power-bi/service-features-license-type) for more details.
 + Dedicated 'Pro' user
