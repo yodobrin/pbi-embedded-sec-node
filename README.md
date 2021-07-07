@@ -38,7 +38,7 @@ __Note:__ Provided here is a `.env-template` file, that you will need to edit an
 ##### Securing Web App
 In most cases, you will need to use the user context to enable specific authorization access, either to areas in your app or to pass through the user context to the PowerBi report/dashboard. following are tow main repositories that showcase the abilities and capabilities of MSAL.
 - [Main MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-js)
-- [Stand Alon Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/b2c-auth-code)
+- [StandAlon Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-node-samples/b2c-auth-code)
 
 ### Active Directory setup
 It is recoemnded to utilize Service Principal, as users might move from an organization, their authorization altered etc. In this repository, we cover the steps required to create and enable a service principal access to embedded capacity.
