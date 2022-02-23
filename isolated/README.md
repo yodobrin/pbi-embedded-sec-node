@@ -5,7 +5,9 @@
 As B2B ISV, we deal primarily with our customer's data. Our customers consider this data to be confidential, therefore we are using dedicated virtual network to restrict access to their data and other compute and storage resources.
 
 Here is a common network diagram that we create for our customers:
-TODO: enter diagram here
+
+![image](https://user-images.githubusercontent.com/37622785/155298297-f8a5a808-57d4-4daf-8c3c-65bfb86a5be3.png)
+
 
 [Sample Architecture](https://docs.microsoft.com/en-us/azure/architecture/example-scenario/data/data-analysis-regulated-industries)
 
