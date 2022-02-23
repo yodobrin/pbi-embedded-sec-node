@@ -13,6 +13,8 @@ Here is a common network diagram:
 
 ![image](https://user-images.githubusercontent.com/37622785/155298297-f8a5a808-57d4-4daf-8c3c-65bfb86a5be3.png)
 
+PowerBI embedded will be able to access data using a [Data Gateway](https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-communication#ports).
+
 [Sample Architecture](https://docs.microsoft.com/en-us/azure/architecture/example-scenario/data/data-analysis-regulated-industries)
 
 _Note:_ {to-be-edited} there is a repo with deployment scripts aligned with the above architecture sample, however it uses PBI Premium and the intention of this sample is leveraging PBI embedded (for customers)
@@ -32,6 +34,8 @@ I want to be able and access the secured data elements from my working environme
 ## User Story  - As a B2B ISV Security Officer
 
 I want to be able and provision all required resources in the most secured way, so that access to resources is restricted and controlled.
+
+For my SaaS deployment, I want to be able and authorize access to the data and reports based on my customer subscription ensuring each customer can access only to his specific reports & dashboards.
 
 The organization preference is to use private end-points when available.
 
