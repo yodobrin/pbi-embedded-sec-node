@@ -45,6 +45,16 @@ I want for both my SaaS customers and dedicated solution customers would be able
 
 This repository, will walk you through the steps required to create a web application, exposing (or publishing) power BI reports, to mass amount of users without 'Pro' users license. This is a common use case for health organization, public transportation, finance etc. The solution outlines the architecture, the Azure assets requirement, and it will guide you, on how to secure your application. Power BI Embedded using node. This project is forked from [Samples](https://github.com/Microsoft/PowerBI-Developer-Samples), focusing on the Node flavor.
 
+## User Story - As a B2B Customer
+
+I want to be able and navigate to my ISV provider URL, authenticate and then be able to see my relevant reports or dashboards, so that I can leverage the information.
+
+I want to be able and use my organization identity management system, so that my organization will continue to control my identity.
+
 ## Potential Use Case
 
 Your organization collected data, or is aiming to collect. You have a great reporting team, they produce amazing reports from the collected data, these reports can help others achieve their goals, save lives, help plan for traffic jams, find the perfect price or any other target. With power BI embedded, you can publish the reports to a large community. But, you don't just want anyone to access, you have restrictions requirements, have it regulation or a business decision.
+
+### Getting an embedded token
+
+Here is a diagram, showing how an embedded token is provided.
