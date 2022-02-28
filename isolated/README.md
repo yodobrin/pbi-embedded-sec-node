@@ -58,3 +58,5 @@ Your organization collected data, or is aiming to collect. You have a great repo
 ### Getting an embedded token
 
 Here is a diagram, showing how an embedded token is provided.
+![image](https://user-images.githubusercontent.com/37622785/155952337-8c02ccf1-e783-4692-a034-57ac4cb7c8bb.png)
+
