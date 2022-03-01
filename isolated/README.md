@@ -75,7 +75,7 @@ To learn more on B2B Collaboration, here are few helpful documents:
 - [Security recommendations - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/security-recommendations)
 - [Authentication and authorization - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization)
 - [Grant B2B users access to your on-premises apps - Azure AD | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/hybrid-cloud-to-on-premises)
-- [Azure/active-directory-dotnet-graphapi-b2bportal-web](https://github.com/ Azure/active-directory-dotnet-graphapi-b2bportal-web)
+- [Azure/active-directory-dotnet-graphapi-b2bportal-web | GitHub](https://github.com/Azure/active-directory-dotnet-graphapi-b2bportal-web)
 - [Using External Identities with Azure AD and SAML for B2B Apps - YouTube](https://www.youtube.com/watch?v=7waiCeg8AZ4)
 
 ### Getting an embedded token
