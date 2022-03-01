@@ -55,8 +55,30 @@ I want to be able and use my organization identity management system, so that my
 
 Your organization collected data, or is aiming to collect. You have a great reporting team, they produce amazing reports from the collected data, these reports can help others achieve their goals, save lives, help plan for traffic jams, find the perfect price or any other target. With power BI embedded, you can publish the reports to a large community. But, you don't just want anyone to access, you have restrictions requirements, have it regulation or a business decision.
 
+### Authenticate and Authorize users
+
+As B2B ISV provider, I want to collaborate with my customer employees, allow them to register to my service, and maintain minimal operational aspects for them.
+
+Using [Azure B2B Collaboration](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/what-is-b2b) would be the best approach.
+There are few onboarding process options:
+
+- An invitation and redemption process lets partners use their own credentials or
+- Self-service sign-up user flows to let external users sign up for apps or resources themselves
+
+Once they complete one of the on boarding procedures, they have an entity created in the ISV AAD typically given a user type of "guest" and can be identified by the #EXT# extension in their user principal name. This entity can be associated to groups or roles, that once logged in, you can obtain it from the jwt.
+
+To learn more on B2B Collaboration, here are few helpful documents:
+
+- [External Identities in Azure Active Directory | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/external-identities-overview)
+- [B2B collaboration overview - Azure AD | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/what-is-b2b)
+- [Build apps that sign in Azure AD users - Microsoft identity platform | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant)
+- [Security recommendations - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/security-recommendations)
+- [Authentication and authorization - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization)
+- [Grant B2B users access to your on-premises apps - Azure AD | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/external-identities/hybrid-cloud-to-on-premises)
+- [Azure/active-directory-dotnet-graphapi-b2bportal-web](https://github.com/ Azure/active-directory-dotnet-graphapi-b2bportal-web)
+- [Using External Identities with Azure AD and SAML for B2B Apps - YouTube](https://www.youtube.com/watch?v=7waiCeg8AZ4)
+
 ### Getting an embedded token
 
 Here is a diagram, showing how an embedded token is provided.
 ![image](https://user-images.githubusercontent.com/37622785/155952337-8c02ccf1-e783-4692-a034-57ac4cb7c8bb.png)
-
